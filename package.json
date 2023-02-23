@@ -5,13 +5,12 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "data_users": "node ./models/data/users",
-    "data_categorias": "node ./models/data/categorias", 
-    "data_books": "node ./models/data/books"
+    "data_users": "node ./models/data/users"
   },
   "type": "module",
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
     "ejs": "~2.6.1",
