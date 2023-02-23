@@ -5,7 +5,6 @@ import path from "path";                   //maneja las rutas
 import cookieParser from "cookie-parser";    //libreria para ver sesiones.. no se va  usar
 import logger from "morgan"                 //libreria
 import indexRouter from './routes/index.js'     //traen las rutas de los enpoints
-import usersRouter from './routes/users.js'     //traen las rutas de los enpoints
 import { __dirname } from "./utils.js";
 
 let app = express();
@@ -22,7 +21,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use para usar middlewares para enrutarme con esas "palabritas"
 app.use('/', indexRouter);
-app.use('/users', usersRouter);//endpoint que se conecta con las rutas de los usuarios
-
 
 export default app
