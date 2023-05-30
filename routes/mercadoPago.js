@@ -12,8 +12,8 @@ mercadopago.configure({ access_token: process.env.MERCADOPAGO_KEY });
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'juareznico61@gmail.com',
-    pass: '39423963Nico',
+    user: 'fullfitnesslc@gmail.com',
+    pass: 'Fullfitness2023',
   },
 });
 
@@ -53,8 +53,8 @@ router.post('/', cors(), async (req, res) => {
     .then((response) => {
       // Enviar correo electrónico
       const mailOptions = {
-        from: 'juareznico61@gmail.com',
-        to: 'juareznico61@gmail.com',
+        from: 'fullfitnesslc@gmail.com',
+        to: 'fullfitnesslc@gmail.com',
         subject: 'Nueva compra realizada',
         text: 'Se ha realizado una nueva compra a través de Mercado Pago.',
       };
