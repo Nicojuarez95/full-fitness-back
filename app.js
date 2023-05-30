@@ -7,6 +7,7 @@ import logger from "morgan"                 //libreria
 import indexRouter from './routes/index.js'     //traen las rutas de los enpoints
 import cors from 'cors'
 import { __dirname } from "./utils.js";
+import paymentRouter from './routes/mercadoPago.js';
 
 let app = express();
 
@@ -23,5 +24,6 @@ app.use(cors());
 
 //app.use para usar middlewares para enrutarme con esas "palabritas"
 app.use('/', indexRouter);
+app.use('/payment', paymentRouter);
 
 export default app
