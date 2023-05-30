@@ -1,4 +1,3 @@
-import userRouter from './users.js'
 
 import express from 'express'
 let router = express.Router();
@@ -10,6 +9,6 @@ router.get('/', function(req, res, next) {
 
 //rutas de todos los recursos
 //a traves del metodo .use() le indico al enrutador principal que use esas rutas con esa palabrita(endpoint)
-router.use('/users',userRouter)
+
 
 export default router
