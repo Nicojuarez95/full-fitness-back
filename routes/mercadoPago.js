@@ -21,7 +21,7 @@ router.post('/', cors(), async (req, res) => {
     basket.map(async (item) => {
       return {
         id: item.id,
-        title: `${item.name} - Dirección: "${address}", Ciudad: "${city}", Código postal: "${postalCode}" `, // Incluye la información de dirección en el título
+        title: item.name,
         currency_id: 'ARS',
         unit_price: item.price,
         picture_url: item.image,
@@ -44,7 +44,16 @@ router.post('/', cors(), async (req, res) => {
   mercadopago.preferences
     .create(preference)
     .then((response) => {
-      res.status(200).json({ init_point: response.body.init_point });
+      const itemsWithShippingInfo = items.map((item) => ({
+        ...item,
+        title: `Dirección: "${address}", Ciudad: "${city}", Código postal: "${postalCode}"`,
+      }));
+
+      res.status(200).json({
+        init_point: response.body.init_point,
+        items: itemsWithShippingInfo,
+        shippingData: { address, city, postalCode },
+      });
     })
     .catch((error) => {
       console.log('Error:', error);
