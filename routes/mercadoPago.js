@@ -21,7 +21,7 @@ router.post('/', cors(), async (req, res) => {
     basket.map(async (item) => {
       return {
         id: item.id,
-        title: `${item.name} - ${address}, ${city}, ${postalCode}`, // Incluye la información de dirección en el título
+        title: `${item.name} - Dirección: "${address}", Ciudad: "${city}", Código postal: "${postalCode}" `, // Incluye la información de dirección en el título
         currency_id: 'ARS',
         unit_price: item.price,
         picture_url: item.image,
