@@ -44,7 +44,8 @@ router.post('/', cors(), async (req, res) => {
   mercadopago.preferences
     .create(preference)
     .then((response) => {
-      res.status(200).json({ init_point: response.body.init_point });
+      const initPoint = response.body.init_point;
+      res.redirect(initPoint);
     })
     .catch((error) => {
       console.log('Error:', error);
