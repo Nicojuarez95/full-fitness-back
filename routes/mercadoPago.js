@@ -50,6 +50,7 @@ router.post('/', cors(), async (req, res) => {
       console.log('Error:', error);
       res.status(400).json({ error: error.message });
     });
+    
 });
 
 export default router;
