@@ -6,9 +6,6 @@ import http from 'http'
 let port = normalizePort(process.env.PORT || '8000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
 
 let server = http.createServer(app);
 
