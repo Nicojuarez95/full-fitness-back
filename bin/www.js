@@ -13,9 +13,6 @@ server.listen(port,()=>console.log("server ready"));
 server.on('error', onError);
 server.on('listening', onListening);
 
-/**
- * Normalize a port into a number, string, or false.
- */
 
 function normalizePort(val) {
   let port = parseInt(val, 10);
