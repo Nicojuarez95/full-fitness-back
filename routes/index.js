@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
 });
 
 //rutas de todos los recursos
-//a traves del metodo .use() le indico al enrutador principal que use esas rutas con esa palabrita(endpoint)
 router.use('/payment', mercadoPago)
 
 export default router
