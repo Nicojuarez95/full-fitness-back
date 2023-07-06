@@ -7,7 +7,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-//rutas de todos los recursos
 router.use('/payment', mercadoPago)
 
 export default router
