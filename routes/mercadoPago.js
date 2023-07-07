@@ -15,13 +15,13 @@ router.post('/', cors(), async (req, res) => {
   }
 
   // Accede a los datos del formulario
-  const { address, city, postalCode } = shippingData;
+  const { address, city, postalCode, number } = shippingData;
 
   const items = await Promise.all(
     basket.map(async (item) => {
       return {
         id: item.id,
-        title: `${item.name} - Dirección: "${address}", Ciudad: "${city}", Código postal: "${postalCode}" `, 
+        title: `${item.name} - Dirección: "${address}", Ciudad: "${city}", Código postal: "${postalCode}", Celular: "${number}" `, 
         currency_id: 'ARS',
         unit_price: item.price,
         picture_url: item.image,
