@@ -33,7 +33,7 @@ router.post('/', cors(), async (req, res) => {
   const preference = {
     items,
     back_urls: {
-      success: 'http://localhost:8000/',
+      success: 'https://www.fullfitnesslc.com.ar/',
       failure: '',
       pending: '',
     },
